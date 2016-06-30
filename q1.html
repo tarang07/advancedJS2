@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		Advanced JS 2
+	</title>
+<script>
+	function Car(make,model,year) {
+		this.make = make;
+		this.model = model;
+		this.year = year;
+	}
+
+	var car1 = new Car('Maruti','Alto','1993');
+	var car2 = new Car('Toyata','Fortuner','1996');
+	function click1() {
+		alert("Car Make "+car1.make + " Model " + car1.model + " Year " + car1.year);
+	}
+
+	function click2() {
+		alert("Car Make "+car2.make + " Model " + car2.model + " Year " + car2.year);
+	}
+
+
+</script>
+</head>
+<body>
+<p>Object Creation</p><br>
+
+<button onclick="click1()">Oject 1</button>
+<br>
+<button onclick="click2()">Object 2</button>
+
+</body>
+</html>
+

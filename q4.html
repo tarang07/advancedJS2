@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		Advanced JavaScript 2 q4
+	</title>
+</head>
+<script type="text/javascript">
+	(function () {
+		var Person = function(firstName) {
+  		this.firstName = firstName;
+  		this.lastname = "Kumar";
+
+	};
+	Person.prototype.specification = function(){
+  		console.log("I m Dynamic and Smart ");
+	};
+	function Student(firstName, subject) {
+  		Person.call(this, firstName);
+  		this.subject = subject;
+  		this.lastname = "Bharti";
+	}
+	Student.prototype = Object.create(Person.prototype);
+	Student.prototype.constructor = Student;
+	Student.prototype.lastname = "Bharti";
+	Student.prototype.details = function(){
+  		console.log("My name is " + this.firstName + " my fav. subject is "
+              + this.subject+" lastName "+this.lastname);
+	};
+	
+	var student1 = new Student("Ishu", "Astronomy");
+
+	student1.details();
+	student1.specification();
+	})();
+</script>
+<body>
+
+</body>
+</html>

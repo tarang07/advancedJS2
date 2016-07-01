@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		Advanced JS 2
+	</title>
+	<script type="text/javascript">
+		(function () {
+			var Vehicle = function(wheel) {
+				this.wheel = wheel;
+			};
+
+			function VehicleType(vehicle_name,brand,wheel) {
+				Vehicle.call(this,wheel); // vehicle is parent class nd here linking is established
+				this.vehicle_name = vehicle_name;
+				this.brand = brand;
+			}
+			VehicleType.prototype = Object.create(Vehicle.prototype);
+			VehicleType.prototype.constructor = VehicleType;
+			VehicleType.prototype.specifications = function() { 
+				alert("Vehicle Name "+this.vehicle_name+" Brand "+this.brand+" Wheel "+ this.wheel);
+			};
+
+			var vehicleBike = new VehicleType('Avenger','Bajaj',2); 
+			var vehicleCar = new VehicleType('Fortuner','Toyata',4);
+			var vehicleAuto = new VehicleType('RE205','Bajaj',3);
+			vehicleBike.specifications();
+			vehicleCar.specifications();
+			vehicleAuto.specifications();
+
+
+
+		})();
+	</script>
+</head>
+<body>
+<h3>OOPs Vehicle</h3>
+<h4>Inheritance is Implemented</h4>
+</body>
+</html>
